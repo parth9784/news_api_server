@@ -14,6 +14,9 @@ async function getnews(query) {
         console.error("Error fetching news data:", error);
     }
 }
+app.get("/",(req,res)=>{
+    res.send("<h1>This is the News Server</h1>")
+})
 app.get("/getnews/:q", async (req,res)=>{
     let q=req.params.q
     console.log(q)
