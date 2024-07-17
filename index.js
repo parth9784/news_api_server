@@ -1,10 +1,9 @@
 const express=require("express")
 const axios=require("axios")
 const app=express()
+const cors = require("cors");
 require("dotenv").config()
-// async function getnews(){
-//     return await axios.get("https://newsdata.io/api/1/latest?apikey=pub_487843b54cd00e144ac56f855a5e5e3ba9021&language=en")
-// }
+app.use(cors());
 async function getnews(query) {
     try {
         const response = await axios.get(`https://newsdata.io/api/1/latest?apikey=${process.env.API_KEY}&q=${query}&language=en`);
