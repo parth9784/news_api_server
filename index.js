@@ -6,8 +6,8 @@ require("dotenv").config()
 app.use(cors());
 async function getnews(query) {
     try {
-        const response = await axios.get(`https://newsdata.io/api/1/latest?apikey=${process.env.API_KEY}&q=${query}&language=en`);
-        return response.data.results;
+        const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.API_KEY}`);
+        return response.data.articles;
     } 
     catch (error) {
         console.error("Error fetching news data:", error);
