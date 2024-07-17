@@ -15,7 +15,7 @@ async function getnews(query) {
     }
 }
 app.get("/",(req,res)=>{
-    res.send("<h1>This is the News Server</h1>")
+    res.send("<h1>This is the News Server Developed By Parth Dadhich</h1>")
 })
 app.get("/getnews/:q", async (req,res)=>{
     let q=req.params.q
